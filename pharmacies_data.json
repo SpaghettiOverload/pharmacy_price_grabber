@@ -1,0 +1,25 @@
+{
+  "Pharmacies" : [
+    {
+        "name": "МАРВИ",
+        "search_address": "https://marvi.bg/search?keywords=",
+        "delivery_terms": {"Delivery cost": 4.00, "Free delivery threshold": 50.00},
+        "titles_grabber": ".uk-grid-match .product-title",
+        "price_grabber": ".uk-grid-match .product-price"
+    },
+    {
+        "name": "РЕМЕДИУМ",
+        "search_address": "https://remedium.bg/search?q=",
+        "delivery_terms": {"Delivery cost": 3.90, "Free delivery threshold": 60.00},
+        "titles_grabber": ".LineItem__ItemInformation-sc-1imtm0n-1 > p",
+        "price_grabber": "div.Price__Container-sc-14hy5o8-0 > span"
+    },
+    {
+        "name": "SOpharmacy",
+        "search_address": "https://sopharmacy.bg/bg/sophSearch/?text=",
+        "delivery_terms": {"Delivery cost": 3.90, "Free delivery threshold": 50.00},
+        "titles_grabber": "h2.products-item__title",
+        "price_grabber": "ul.product-grid"
+    }
+  ]
+}
