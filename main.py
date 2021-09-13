@@ -15,4 +15,4 @@ for pharmacy in progress_bar(driver.pharmacies):
     pharmacy.add_found(result)
 
 driver.determine_best_price_and_pharmacy(quantity)
-driver.print(search_input, quantity)  # Printing results from within print function.
+driver.print(search_input, quantity)

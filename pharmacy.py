@@ -48,14 +48,14 @@ class Pharmacy:
         self.results_found.extend(result)
 
     def search_for(self, search: str) -> List[Dict]:
-        scraper = cloudscraper.create_scraper()  # Initializing a scraper instance.
-        url = self.__get_url(search)  # Requesting a complete URL from "__get_url" method.
-        response = scraper.get(url)  # Scraping.
-        soup = BeautifulSoup(response.text, 'html.parser')  # Parsing.
-        raw_titles: bs4.element.ResultSet = soup.select(self.titles_grabber)  # Extracting raw titles for each product found.
-        raw_prices: List = [price.text for price in soup.select(self.price_grabber)]  # Extracting raw prices for each product found.
-        results: List[Dict] = clean_results(raw_titles, raw_prices, search)  # Passing raw data for processing and waiting for final values.
-        return results  # Returns final values.
+        scraper = cloudscraper.create_scraper()
+        url = self.__get_url(search)
+        response = scraper.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        raw_titles: bs4.element.ResultSet = soup.select(self.titles_grabber)
+        raw_prices: List = [price.text for price in soup.select(self.price_grabber)]
+        results: List[Dict] = clean_results(raw_titles, raw_prices, search)
+        return results
 
     @property
     def stock(self) -> bool:
