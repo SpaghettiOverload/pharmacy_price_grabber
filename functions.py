@@ -42,7 +42,7 @@ def get_prices(x: str) -> Tuple[bool, float, float]:
 
     for value in prices:
         if "," in value:
-            value = value.replace(',', '.')
+            value = value.replace(",", ".")
         try:
             price = float(value)
             caught_prices.append(price)

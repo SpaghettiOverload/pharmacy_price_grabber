@@ -51,7 +51,7 @@ class Pharmacy:
         scraper = cloudscraper.create_scraper()
         url = self.__get_url(search)
         response = scraper.get(url)
-        soup = BeautifulSoup(response.text, 'html.parser')
+        soup = BeautifulSoup(response.text, "html.parser")
         raw_titles: bs4.element.ResultSet = soup.select(self.titles_grabber)
         raw_prices: List = [price.text for price in soup.select(self.price_grabber)]
         results: List[Dict] = clean_results(raw_titles, raw_prices, search)

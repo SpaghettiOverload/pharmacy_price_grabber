@@ -1,18 +1,18 @@
 from tqdm import tqdm as progress_bar
 
 from functions import validate_user_input, validate_user_quantity
-from driver import Driver
+from pharmacies_manager import PharmaciesManager
 
 
-driver = Driver()
-driver.activate()
+manager = PharmaciesManager()
+manager.activate()
 
 search_input = validate_user_input()
 quantity = validate_user_quantity()
 
-for pharmacy in progress_bar(driver.pharmacies):
+for pharmacy in progress_bar(manager.pharmacies):
     result = pharmacy.search_for(search_input)
     pharmacy.add_found(result)
 
-driver.determine_best_price_and_pharmacy(quantity)
-driver.print(search_input, quantity)
+manager.determine_best_price_and_pharmacy(quantity)
+manager.print(search_input, quantity)
